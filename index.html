@@ -110,7 +110,7 @@ body {
   <tr>
     <td>
       <div class="skill-cell">
-        <img class="logo" src="Typescript_logo_2020.svg" alt="TypeScript Logo">
+        <img class="logo" src="styles/Typescript_logo_2020.svg" alt="TypeScript Logo">
         <span class="skill-label">TypeScript</span>
         <div class="bar-container">
           <div class="bar-inner" data-width="30%"></div>
@@ -121,7 +121,7 @@ body {
 
     <td>
       <div class="skill-cell">
-        <img class="logo" src="HTML5_logo_and_wordmark.svg" alt="HTML Logo">
+        <img class="logo" src="styles/HTML5_logo_and_wordmark.svg" alt="HTML Logo">
         <span class="skill-label">HTML5</span>
         <div class="bar-container">
           <div class="bar-inner" data-width="80%"></div>
@@ -134,7 +134,7 @@ body {
   <tr>
     <td>
       <div class="skill-cell">
-        <img class="logo" src="CSS3_logo_and_wordmark.svg" alt="CSS Logo">
+        <img class="logo" src="styles/CSS3_logo_and_wordmark.svg" alt="CSS Logo">
         <span class="skill-label">CSS3</span>
         <div class="bar-container">
           <div class="bar-inner" data-width="70%"></div>
@@ -145,7 +145,7 @@ body {
 
     <td>
       <div class="skill-cell">
-        <img class="logo" src="JavaScript-logo.png" alt="JS Logo">
+        <img class="logo" src="styles/JavaScript-logo.png" alt="JS Logo">
         <span class="skill-label">JavaScript</span>
         <div class="bar-container">
           <div class="bar-inner" data-width="50%"></div>
@@ -191,17 +191,19 @@ body {
       <p class="projekt-desc">Interaktives Spiel mit HTML, CSS & JS.</p>
       <a href="Rock Paper Scissors.html" class="projekt-btn">🔗 ansehen</a>
     </div>
+
     <div class="projekt-card scroll-animate">
       <img src="styles/Screenshot 2026-01-09 223925.png" alt="Buchverwaltungssystem">
       <p class="projekt-title">Buchverwaltungssystem</p>
       <p class="projekt-desc">Buchverwaltungssystem mit C# WPF</p>
-      <a href="youTube.html" class="projekt-btn">🔗 ansehen</a>
+      <a href="youtube.html" class="projekt-btn">🔗 ansehen</a>
     </div>
-     <div class="projekt-card scroll-animate">
+
+    <div class="projekt-card scroll-animate">
       <img src="styles/Screenshot 2025-08-21 164553.png" alt="YouTube-Oberfläche">
       <p class="projekt-title">YouTube-Oberfläche</p>
       <p class="projekt-desc">Statische Nachbildung von YouTube mit HTML & CSS.</p>
-      <a href="youTube.html" class="projekt-btn">🔗 ansehen</a>
+      <a href="youtube.html" class="projekt-btn">🔗 ansehen</a>
     </div>
   </div>
 </div>
@@ -237,7 +239,7 @@ function scrollReveal() {
     }
   }
 
-  var bars = document.querySelectorAll('.bar-inner');
+  var bars = document.querySelectorSelectorAll('.bar-inner');
   for(var j=0; j<bars.length; j++){
     if(bars[j].parentElement.parentElement.getBoundingClientRect().top < window.innerHeight - 50){
       bars[j].style.width = bars[j].getAttribute('data-width');
