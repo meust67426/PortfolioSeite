@@ -240,7 +240,7 @@ function scrollReveal() {
     }
   }
 
-  var bars = document.querySelectorSelectorAll('.bar-inner');
+var bars = document.querySelectorAll('.bar-inner');
   for(var j=0; j<bars.length; j++){
     if(bars[j].parentElement.parentElement.getBoundingClientRect().top < window.innerHeight - 50){
       bars[j].style.width = bars[j].getAttribute('data-width');
