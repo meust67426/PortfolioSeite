@@ -53,7 +53,7 @@ body {
 .skill-cell .logo, .skill-cell .emoji-logo { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
 .skill-label { width: 110px; font-weight: 600; font-size: 1.05rem; }
 .bar-container { flex: 1; height: 30px; background: #111; border-radius: 15px; overflow: hidden; position: relative; }
-.bar-inner { height: 100%; background: linear-gradient(90deg,#00ffff,#00bfff,#00ffff88); transition: width 1.2s ease; width: 0; }
+.bar-inner { height: 100%; background: linear-gradient(90deg,#00ffff,#00bfff,#00ffff88); transition: width 1.2s ease; width: 0; } /* Animation von 0 */
 .bar-label { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #00ffff; font-weight: 700; font-size: 0.9rem; }
 
 .projekte-section { margin-top: 100px; text-align: center; padding: 0 20px; }
@@ -82,14 +82,71 @@ body {
   .skill-cell { flex-direction: column; align-items: flex-start; }
   .bar-container { width: 100%; }
 }
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* 👈 Hintergrund wird dunkel */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+
+.popup-box {
+  background: #fff;
+  color: #333;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  animation: slideIn 2s ease forwards;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popup-box h2 {
+  margin-top: 0;
+}
+
+.popup-box button {
+  margin-top: 20px;
+  padding: 12px 28px;
+  border: none;
+  background: #ff7a00;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+
+}
+
+.popup-box button:hover {
+  background: #ff9a33;
+}
+
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
-<div class="header scroll-animate show">
+<div class="header scroll-animate">
   <div class="text-container">
-    <p class="name">Hi, ich bin <span class="dynamic-role">probleml</span><br><span class="name-1">Ismail Mesut Gilik</span></p>
+    <p class="name">Hi, ich bin <span class="dynamic-role"></span><br><span class="name-1">Ismail Mesut Gilik</span></p>
     <div class="icon-container">
       <span class="arrow">➡️</span>
       <div class="webentwicklung">Praktikant als Webentwickler/Softwareentwickler </div>
@@ -99,9 +156,9 @@ body {
 </div>
 
 <!-- ÜBER MICH -->
-<div class="über-section scroll-animate show">
+<div class="über-section scroll-animate">
   <p class="über">Über mich :</p>
-  <p class="hallo">Hallo! Ich bin Mesut, ein leidenschaftlicher Webentwickler mit Fokus auf modernes, responsives Design. Ich liebe es, kreative Ideen in funktionierende Websites umzusetzen. Zurzeit lerne ich ständig neue Technologien wie Typescript, Javascript und Angular .</p>
+  <p class="hallo">Hallo! Ich bin Mesut, ein leidenschaftlicher Webentwickler mit Fokus auf modernes, responsives Design. Ich liebe es, kreative Ideen in funktionierende Websites umzusetzen. Zurzeit lerne ich ständig neue Technologien wie Typescript, Angular und UX/UI-Design.</p>
 </div>
 
 <!-- SKILLS -->
@@ -110,7 +167,7 @@ body {
   <tr>
     <td>
       <div class="skill-cell">
-        <img class="logo" src="styles/Typescript_logo_2020.svg.png" alt="TypeScript Logo">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript Logo">
         <span class="skill-label">TypeScript</span>
         <div class="bar-container">
           <div class="bar-inner" data-width="30%"></div>
@@ -121,8 +178,7 @@ body {
 
     <td>
       <div class="skill-cell">
-        <img class="logo" src="styles/HTML5_logo.png" alt="HTML Logo">
-
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Logo">
         <span class="skill-label">HTML5</span>
         <div class="bar-container">
           <div class="bar-inner" data-width="80%"></div>
@@ -135,7 +191,7 @@ body {
   <tr>
     <td>
       <div class="skill-cell">
-        <img class="logo" src="styles/css-logo.png" alt="CSS Logo">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS Logo">
         <span class="skill-label">CSS3</span>
         <div class="bar-container">
           <div class="bar-inner" data-width="70%"></div>
@@ -146,7 +202,7 @@ body {
 
     <td>
       <div class="skill-cell">
-        <img class="logo" src="styles/javascript-logo.png" alt="JS Logo">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JS Logo">
         <span class="skill-label">JavaScript</span>
         <div class="bar-container">
           <div class="bar-inner" data-width="50%"></div>
@@ -170,7 +226,7 @@ body {
 
 <td>
   <div class="skill-cell">
-    <img class="logo" src="styles/Logo_C_sharp.svg.png" >
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg" alt="C# Logo">
     <span class="skill-label">C#</span>
     <div class="bar-container">
       <div class="bar-inner" data-width="60%"></div>
@@ -179,8 +235,11 @@ body {
   </div>
 </td>
 
+
+
   </tr>
 </table>
+
 
 <!-- PROJEKTE -->
 <div class="projekte-section">
@@ -190,22 +249,22 @@ body {
       <img src="styles/Screenshot 2025-08-20 205002.png" alt="Schere-Stein-Papier">
       <p class="projekt-title">Schere-Stein-Papier</p>
       <p class="projekt-desc">Interaktives Spiel mit HTML, CSS & JS.</p>
-      <a href="Rock Paper Scissors.html" class="projekt-btn">🔗 ansehen</a>
+      <a href="06-roch-paper-scissors.html" class="projekt-btn">🔗 ansehen</a>
     </div>
-
     <div class="projekt-card scroll-animate">
       <img src="styles/Screenshot 2026-01-09 223925.png" alt="Buchverwaltungssystem">
       <p class="projekt-title">Buchverwaltungssystem</p>
       <p class="projekt-desc">Buchverwaltungssystem mit C# WPF</p>
       <a href="styles/Screenshot 2026-01-09 223925.png" class="projekt-btn">🔗 ansehen</a>
     </div>
-
-    <div class="projekt-card scroll-animate">
-      <img src="styles/Screenshot 2025-08-21 164553.png" alt="YouTube-Oberfläche">
+     <div class="projekt-card scroll-animate">
+      <img src="styles/Screenshot 2025-08-21 164553.png" >
       <p class="projekt-title">YouTube-Oberfläche</p>
       <p class="projekt-desc">Statische Nachbildung von YouTube mit HTML & CSS.</p>
-      <a href="./YouTube.html" class="projekt-btn">🔗 ansehen</a>
+      <a href="youtube.html" class="projekt-btn">🔗 ansehen</a>
     </div>
+   
+
   </div>
 </div>
 
@@ -213,14 +272,23 @@ body {
 <div class="portfolio-footer scroll-animate">
   <div class="footer-inner">
     <div class="footer-row"><span class="footer-icon">🙌</span><span class="footer-text">Vielen Dank, dass Sie mein Portfolio besucht haben.</span></div>
-    <div class="footer-row"><span class="footer-icon">💡</span><span class="footer-text">Hochmotiviert, neue Technologien wie <span class="footer-highlight">Typescript</span>, <span class="footer-highlight">UX/UI</span> & <span class="footer-highlight">Angular</span> zu lernen.</span></div>
+    <div class="footer-row"><span class="footer-icon">💡</span><span class="footer-text">Hochmotiviert, neue Technologien wie <span class="footer-highlight">Typescript</span>, <span class="footer-highlight">Angular</span> & <span class="footer-highlight">C#</span> zu lernen.</span></div>
     <div class="footer-row"><span class="footer-icon">🤝</span><span class="footer-text">Fragen oder Interesse an einem Gespräch? <a href="mailto:ibrahimgilik8@gmail.com" class="footer-link">Kontakt aufnehmen</a></span></div>
+  </div>
+</div>
+<!-- POPUP / MODAL -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <h2>Willkommen an Bord🎉</h2>
+    <p>Bereit, meine Portfolio zu sehen</p>
+    <button id="popupBtn"> Los gehts</button>
   </div>
 </div>
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
+// Typed.js
 var typed = new Typed(".dynamic-role", {
   strings: ["ein Webentwickler","problemlösend","kreativ","neugierig","motiviert","bereit!"],
   typeSpeed: 110,
@@ -231,26 +299,51 @@ var typed = new Typed(".dynamic-role", {
   showCursor: false
 });
 
+
+
+
+// Scroll Animation
 function scrollReveal() {
   let items = document.querySelectorAll('.scroll-animate');
-  for(let i=0; i<items.length; i++){
+
+  for (let i = 0; i < items.length; i++) {
     let rect = items[i].getBoundingClientRect();
-    if(rect.top < window.innerHeight - 80){
+    if (rect.top < window.innerHeight - 80) {
       items[i].classList.add('show');
     }
   }
 
-var bars = document.querySelectorAll('.bar-inner');
-  for(var j=0; j<bars.length; j++){
-    if(bars[j].parentElement.parentElement.getBoundingClientRect().top < window.innerHeight - 50){
+  // Skills Animation
+  let bars = document.querySelectorAll('.bar-inner');
+  for (let j = 0; j < bars.length; j++) {
+    let barRect = bars[j].parentElement.parentElement.getBoundingClientRect();
+    if (barRect.top < window.innerHeight - 50) {
       bars[j].style.width = bars[j].getAttribute('data-width');
     }
   }
 }
-window.addEventListener('scroll', scrollReveal);
-window.addEventListener('resize', scrollReveal);
-window.addEventListener('DOMContentLoaded', scrollReveal);
-window.addEventListener('load', scrollReveal);
+
+// POPUP
+const popup = document.getElementById("popup");
+const popupBtn = document.getElementById("popupBtn");
+
+// Popup beim Laden anzeigen
+window.addEventListener("load", () => {
+  popup.classList.add("active");
+});
+
+// 🔥 ALLES STARTET ERST HIER
+popupBtn.addEventListener("click", () => {
+  // Popup schließen
+  popup.classList.remove("active");
+
+  // Animationen JETZT aktivieren
+  scrollReveal(); // einmal direkt ausführen
+
+  window.addEventListener('scroll', scrollReveal);
+  window.addEventListener('resize', scrollReveal);
+});
+
 </script>
 </body>
 </html>
