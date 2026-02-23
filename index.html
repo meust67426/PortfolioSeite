@@ -334,7 +334,9 @@ body {
 @media (min-width: 48rem) {
 
 body {
-  display: block; /* 🔥 Mobile = kein Flex nötig */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* ✅ GANZE BREITE */
 }
 
   .header {
