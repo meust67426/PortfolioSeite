@@ -20,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2.5rem 1.25rem;
+  padding: 1.5rem 1rem;
   font-weight: 600;
 }
 
@@ -30,21 +30,21 @@ body {
 
 .header {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.5rem;
   max-width: 75rem;
   width: 100%;
+  text-align: center;
 }
 
 .text-container {
-  max-width: 37.5rem;
+  max-width: 40rem;
 }
 
 .name {
-  font-size: clamp(2rem, 5vw, 3rem);
-  letter-spacing: 0.125rem;
+  font-size: clamp(1.9rem, 7vw, 3rem);
+  letter-spacing: 0.1rem;
   margin: 0;
   line-height: 1.3;
   font-weight: 700;
@@ -55,18 +55,19 @@ body {
 }
 
 .icon-container {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 0.6rem;
 }
 
 .arrow {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .webentwicklung {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #ccc;
 }
 
@@ -75,33 +76,19 @@ body {
 ========================= */
 
 .profil-bild {
-  width: min(70vw, 17.5rem);
+  width: 65vw;
+  max-width: 15rem;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
   border: 0.15rem solid #00ffff33;
-  box-shadow: 0 0 1.25rem #00ffff44;
+  box-shadow: 0 0 1.2rem #00ffff44;
   animation: fadeIn 1s ease forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.8); }
+  from { opacity: 0; transform: scale(0.85); }
   to { opacity: 1; transform: scale(1); }
-}
-
-/* =========================
-   SCROLL ANIMATION
-========================= */
-
-.scroll-animate {
-  opacity: 0;
-  transform: translateY(3rem);
-  transition: opacity 0.7s, transform 0.7s;
-}
-
-.scroll-animate.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* =========================
@@ -109,21 +96,21 @@ body {
 ========================= */
 
 .über-section {
-  margin-top: 4rem;
-  max-width: 50rem;
+  margin-top: 3rem;
+  max-width: 45rem;
   text-align: center;
 }
 
 .über {
-  font-size: clamp(1.6rem, 4vw, 1.8rem);
+  font-size: clamp(1.5rem, 5vw, 1.8rem);
   margin-bottom: 0.6rem;
   color: #00ffff;
   font-weight: 700;
 }
 
 .hallo {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.7;
   color: #ccc;
 }
 
@@ -132,49 +119,39 @@ body {
 ========================= */
 
 .skill {
-  margin-top: 5rem;
-  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  margin-top: 4rem;
+  font-size: clamp(1.7rem, 5vw, 2.2rem);
   color: #00ffff;
   text-align: center;
   font-weight: 700;
 }
 
 .skills-table {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   width: 100%;
-  max-width: 56rem;
-  border-spacing: 0 1.25rem;
+  max-width: 50rem;
+  border-spacing: 0 2rem;
 }
 
 .skills-table td {
-  width: 50%;
-  padding: 0.6rem;
+  display: block;
+  width: 100%;
 }
 
 .skill-cell {
   display: flex;
-  align-items: center;
-  gap: 1.1rem;
-}
-
-.skill-cell .logo,
-.skill-cell .emoji-logo {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 .skill-label {
-  width: 7rem;
-  font-size: 1.05rem;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .bar-container {
-  flex: 1;
-  height: 2rem;
+  width: 100%;
+  height: 1.6rem;
   background: #111;
   border-radius: 1rem;
   overflow: hidden;
@@ -190,12 +167,12 @@ body {
 
 .bar-label {
   position: absolute;
-  right: 0.75rem;
+  right: 0.7rem;
   top: 50%;
   transform: translateY(-50%);
   color: #00ffff;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 /* =========================
@@ -203,36 +180,31 @@ body {
 ========================= */
 
 .projekte-section {
-  margin-top: 6rem;
+  margin-top: 4.5rem;
   text-align: center;
-  padding: 0 1.25rem;
+  padding: 0 0.5rem;
 }
 
 .projekte-title {
-  font-size: clamp(2rem, 4vw, 2.4rem);
+  font-size: clamp(1.9rem, 5vw, 2.4rem);
   color: #00f7ff;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .projekte-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
-  gap: 2.5rem;
-  max-width: 75rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 70rem;
   margin: auto;
 }
 
 .projekt-card {
   background: rgba(20,20,20,0.6);
   border: 0.08rem solid rgba(0,255,255,0.2);
-  border-radius: 1.25rem;
-  padding: 1.25rem;
+  border-radius: 1.2rem;
+  padding: 1rem;
   transition: transform 0.35s ease;
-  cursor: pointer;
-}
-
-.projekt-card:hover {
-  transform: translateY(-0.6rem) scale(1.03);
 }
 
 .projekt-card img {
@@ -240,26 +212,27 @@ body {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .projekt-title {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .projekt-desc {
   font-size: 0.95rem;
   color: #ccc;
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   line-height: 1.4;
 }
 
 .projekt-btn {
-  display: inline-block;
+  display: block;
+  width: 100%;
   margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  border-radius: 0.75rem;
+  padding: 0.8rem;
+  border-radius: 0.7rem;
   background: #00f7ff22;
   color: #00f7ff;
   text-decoration: none;
@@ -278,34 +251,34 @@ body {
 
 .portfolio-footer {
   width: 100%;
-  max-width: 56rem;
+  max-width: 50rem;
   margin: 4rem auto 0;
   text-align: center;
   background: linear-gradient(90deg, #001c2c, #002b3d);
   border-radius: 1.2rem;
-  padding: 2rem 1.25rem;
+  padding: 1.5rem 1rem;
 }
 
 .footer-inner {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.3rem;
   align-items: center;
 }
 
 .footer-row {
   display: flex;
-  gap: 0.9rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .footer-icon {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .footer-text {
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 
 .footer-highlight {
@@ -348,12 +321,12 @@ body {
 .popup-box {
   background: #fff;
   color: #333;
-  padding: 2.5rem 2rem;
+  padding: 2rem 1.5rem;
   border-radius: 0.8rem;
   text-align: center;
   width: 90%;
   max-width: 26rem;
-  animation: slideIn 0.8s ease forwards;
+  animation: slideIn 0.7s ease forwards;
 }
 
 @keyframes slideIn {
@@ -362,8 +335,8 @@ body {
 }
 
 .popup-box button {
-  margin-top: 1.2rem;
-  padding: 0.75rem 1.75rem;
+  margin-top: 1rem;
+  padding: 0.7rem 1.6rem;
   border: none;
   background: #ff7a00;
   color: white;
@@ -376,21 +349,38 @@ body {
 }
 
 /* =========================
-   MOBILE
+   DESKTOP UPGRADES
 ========================= */
 
-@media (max-width: 48rem) {
+@media (min-width: 48rem) {
+
+  body {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .header {
+    flex-direction: row;
+    text-align: left;
+  }
+
   .skills-table td {
-    display: block;
-    width: 100%;
+    display: table-cell;
+    width: 50%;
   }
 
   .skill-cell {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .skill-label {
+    width: 7rem;
+  }
+
+  .projekte-grid {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   }
 }
-
 </style>
 </head>
 <body>
