@@ -374,51 +374,70 @@ body {
 /* =========================
    MOBILE
 ========================= */
+@media (max-width: 36rem) {
 
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 48rem) {
   body {
     padding: 1rem 0.8rem;
   }
 
+  /* HEADER */
   .header {
-    gap: 0.8rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
   }
-}
 
+  .name {
+    font-size: 2rem;
+  }
 
-/* PROFIL-BILD */
-.profil-bild {
-  width: min(55vw, 12rem);  /* Etwas kleiner machen */
-}
+  .icon-container {
+    justify-content: center;
+  }
 
-/* ÜBER MICH */
-.über-section {
-  margin-top: 0.8rem;  /* Von 1.5rem auf 0.8rem reduziert */
-  padding: 0 0.8rem;
-}
+  /* PROFILBILD */
+  .profil-bild {
+    width: 60vw;
+    max-width: 10rem;
+  }
 
-/* SKILLS */
-.skill {
-  margin-top: 1.2rem;  /* Von 1.8rem reduziert */
-  margin-bottom: 0.3rem;  /* Von 0.6rem reduziert */
-}
+  /* ÜBER MICH */
+  .über-section {
+    margin-top: 1.5rem;
+  }
 
-.skills-table {
-  margin-top: 0.6rem;  /* Von 1rem reduziert */
-}
+  /* SKILLS */
+  .skills-table {
+    border-spacing: 0 0.8rem;
+  }
 
-/* PROJEKTE */
-.projekte-section {
-  margin-top: 1.2rem;  /* Von 2rem reduziert */
-}
+  .skill-cell {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
 
-/* FOOTER */
-.portfolio-footer {
-  margin: 1.5rem auto 0;  /* Von 2.5rem reduziert */
-  padding: 1rem 1rem;  /* Von 1.5rem reduziert */
+  .skill-label {
+    width: auto;
+  }
+
+  .bar-container {
+    height: 1.6rem;
+  }
+
+  /* PROJEKTE */
+  .projekte-grid {
+    gap: 1.2rem;
+  }
+
+  .projekt-card {
+    padding: 1rem;
+  }
+
+  /* FOOTER */
+  .footer-text {
+    font-size: 1rem;
+  }
 }
 
 </style>
